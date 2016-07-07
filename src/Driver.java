@@ -24,6 +24,7 @@ public class Driver {
             //新建一个结点并赋值给数据域
             LinkList.Node node = new LinkList.Node();
             node.data = i;
+            node.next = null;
 
             //空表需要先为头结点链接后继结点
             if(linkList.headNode.next == null){
@@ -37,10 +38,6 @@ public class Driver {
         }
 
 
-        LinkList.Node curNode = linkList.headNode;
-        for(int i = 0; i < 10; ++i){
-            System.out.println(curNode.next.data);
-            curNode = curNode.next;
-        }
+        System.out.print(linkList.GetElem(5));
     }
 }
