@@ -38,6 +38,6 @@ public class Driver {
         }
 
 
-        System.out.print(linkList.GetElem(5));
+        System.out.print(linkList.GetElem(-5));
     }
 }

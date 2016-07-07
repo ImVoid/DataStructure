@@ -17,7 +17,16 @@ public class LinkList {
         //处理空表情况
         if(headNode.next == null){
             try{
-                throw new IllegalArgumentException("空表");
+                throw new Exception("空表");
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        //处理索引为负数的情况
+        if(index <= 0){
+            try{
+                throw new IllegalArgumentException("元素不在线性表范围");
             }catch (IllegalArgumentException e){
                 e.printStackTrace();
             }
@@ -29,7 +38,7 @@ public class LinkList {
                 curNode = curNode.next;
             }else {
                 try{
-                    throw new IllegalArgumentException("不在线性表范围");
+                    throw new IllegalArgumentException("元素不在线性表范围");
                 }catch (IllegalArgumentException e){
                     e.printStackTrace();
                 }
