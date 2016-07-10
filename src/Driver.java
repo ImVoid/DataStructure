@@ -37,8 +37,8 @@ public class Driver {
             preNode = node;
         }
 
-        linkList.listInsert(11, 888);
-        for(int i = 1; i <= 11; ++i){
+        linkList.ListDelete(5);
+        for(int i = 1; i <= 9; ++i){
             System.out.println(linkList.getElem(i));
         }
     }

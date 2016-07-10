@@ -36,14 +36,14 @@ public class LinkList {
             }
     }
 
-    public void listInsert(int index, int element){
+    private Node locate(int index){
         handleEmptyList();
         if(index <= 0) {
             handleIllegalIndex("元素不在线性表范围");
         }
 
         int i = 1;
-        Node p = headNode, s = new Node();
+        Node p = headNode;
         /**
          * 遍历中应该找到插入位置的前一结点
          */
@@ -54,6 +54,22 @@ public class LinkList {
         if(p == null || i > index){
             handleIllegalIndex("元素不在线性表范围");
         }
+        return p;
+    }
+
+    public int ListDelete(int index){
+        Node p, q = new Node();
+        //获得 index 前一结点
+        p = locate(index);
+        q = p.next;
+        p.next = q.next;
+        return q.data;
+    }
+
+    public void listInsert(int index, int element){
+        Node p, s = new Node();
+        //获得 index 前一结点
+        p = locate(index);
         s.data = element;
         s.next = p.next;
         p.next = s;
